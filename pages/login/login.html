@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+
+    <style>
+      #main {
+        height: 300px;
+        width: 600px;
+        margin: 20px 0;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        padding: 50px 0;
+      }
+
+      .name > span {
+        display: none;
+      }
+      .error {
+        color: red;
+        font-size: 0.5em;
+      }
+
+      .bold-txt {
+        font-size: 2em;
+        font-weight: 900;
+      }
+      .btn {
+        color: red;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .list-item {
+        display: flex;
+      }
+      .inpEdit {
+        display: none;
+      }
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-image: url(/pics/cpmputers.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
+        padding: 0 20px;
+      }
+
+      /* Main Container */
+      #main {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      #main h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      /* Form Elements */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      form input[type="text"],
+      form input[type="password"],
+      form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        outline: none;
+        transition: box-shadow 0.3s ease;
+      }
+
+      form input[type="text"],
+      form input[type="password"] {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      form input[type="text"]::placeholder,
+      form input[type="password"]::placeholder {
+        color: #ccc;
+      }
+
+      form input[type="text"]:focus,
+      form input[type="password"]:focus {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      form input[type="submit"] {
+        background: #0984e3;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      form input[type="submit"]:hover {
+        background: #74b9ff;
+      }
+
+      /* Sign-Up Link */
+      span {
+        display: block;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #74b9ff;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      span:hover {
+        color: #fff;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        #main {
+          padding: 15px;
+        }
+
+        #main h1 {
+          font-size: 1.5rem;
+        }
+
+        form input[type="text"],
+        form input[type="password"],
+        form input[type="submit"] {
+          font-size: 0.9rem;
+          padding: 8px;
+        }
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Login</h1>
+      <form onSubmit="submitForm(event)">
+        <input type="text" id="email" placeholder="Email" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          required
+        /><br />
+
+        <input type="submit" value="login" />
+      </form>
+      <span onClick="window.location.assign('../../index.html')">sign up</span>
+    </div>
+
+    <script src="./login.js"></script>
+  </body>
+</html>

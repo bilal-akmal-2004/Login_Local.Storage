@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+
+    <style>
+      #main {
+        height: 300px;
+        width: 600px;
+        margin: 20px 0;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-image: url(/pics/bg.png);
+        padding: 50px 0;
+        display: flex;
+        height: 87vh;
+        padding: 50px 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .name > span {
+        display: none;
+      }
+      .error {
+        color: red;
+        font-size: 0.5em;
+      }
+
+      .bold-txt {
+        font-size: 2em;
+        font-weight: 900;
+      }
+      .btn {
+        color: red;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .list-item {
+        display: flex;
+      }
+      .inpEdit {
+        display: none;
+      }
+      #main {
+        background: rgba(187, 187, 187, 0.4);
+        border-radius: 12px;
+        padding: 20px 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+      }
+
+      #main h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      /* Logout Button */
+      button {
+        background: #d63031;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: #e17055;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        #main {
+          padding: 15px;
+        }
+
+        #main h1 {
+          font-size: 1.5rem;
+        }
+
+        button {
+          font-size: 0.9rem;
+          padding: 8px 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Dashboard</h1>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="./dashboard.js"></script>
+  </body>
+</html>
