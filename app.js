@@ -18,15 +18,15 @@ function setData(data) {
 
 var users = getData() ? [...getData()] : [];
 console.log(users);
-// users = [
-//   ...users,
-//   {
-//     username: "Bilal",
-//     password: "123123",
-//     email: "bilal123@gmail.com",
-//   },
-// ];
-// setData(users);
+users = [
+  ...users,
+  {
+    username: "Bilal",
+    password: "123123",
+    email: "bilal123@gmail.com",
+  },
+];
+setData(users);
 console.log(users);
 function checkUserName(e) {
   for (let i = 0; i < e.target.value.length; i++) {
