@@ -1,11 +1,9 @@
 var isLogin = JSON.parse(localStorage.getItem("login"));
-console.log(isLogin);
 if (isLogin) {
   window.location.replace("./pages/dashboard/dashboard.html");
 }
 
 var url = window.location.href;
-console.log(window.location.hostname);
 
 // window.location.replace("https://www.google.com") ;
 
@@ -17,17 +15,19 @@ function setData(data) {
 }
 
 var users = getData() ? [...getData()] : [];
-console.log(users);
-users = [
-  ...users,
-  {
-    username: "Bilal",
-    password: "123123",
-    email: "bilal123@gmail.com",
-  },
-];
+
+if (users.length === 0) {
+  users = [
+    ...users,
+    {
+      username: "Bilal",
+      password: "123123",
+      email: "bilal123@gmail.com",
+    },
+  ];
+}
+
 setData(users);
-console.log(users);
 function checkUserName(e) {
   for (let i = 0; i < e.target.value.length; i++) {
     if (e.target.value.length > 15) {
@@ -49,19 +49,20 @@ function checkPassword(e) {
 let emailCheckFlag = true;
 function checkEmail(e) {
   for (let i = 0; i < users.length; i++) {
-    console.log(users[i].email);
     if (users[i].email == e.target.value) {
       emailCheckFlag = false;
       e.target.nextElementSibling.innerText = `Email already taken !`;
+      break;
     } else if (
       e.target.value.indexOf("@") === -1 ||
       e.target.value.indexOf(".") === -1 ||
       e.target.value.length <= e.target.value.indexOf(".") + 2
     ) {
       e.target.nextElementSibling.innerText = `Make sure the email sturcture is correct!`;
+      break;
     } else {
-      emailCheckFlag = true;
       e.target.nextElementSibling.innerText = ``;
+      emailCheckFlag = true;
     }
   }
 }
@@ -78,7 +79,11 @@ function submitForm(e) {
       ...users,
       { username: usernameInp, password: passwordInp, email: emailInp },
     ];
-    let loginData = { password: passwordInp, email: emailInp };
+    let loginData = {
+      password: passwordInp,
+      email: emailInp,
+      username: usernameInp,
+    };
     localStorage.setItem("login", JSON.stringify(loginData));
     window.location.replace("./pages/dashboard/dashboard.html");
     emailCheckFlag = false;
